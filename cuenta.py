@@ -1,7 +1,13 @@
 class Cuenta:
+    __numero_cuenta = 000
     def __init__(self, persona, cantidad):
+        Cuenta.__numero_cuenta += 1
+        self.__numero_cuenta = Cuenta.__numero_cuenta
         self.__persona = persona
         self.__cantidad = cantidad
+
+    def numero_cuenta(self):
+        return self.__numero_cuenta
 
     def persona(self):
         return self.__persona
@@ -24,4 +30,7 @@ class Cuenta:
             self.__cantidad -= cantidad
 
     def mostrar(self):
-        return f'{self.persona()} {self.cantidad()}'
+        info_cuenta = 'Numero de cuenta: ' + str(self.numero_cuenta()) + '\n' \
+                      + 'Titular: ' + self.__persona.nombre() + '\n' \
+                      + 'Saldo: ' + str(self.cantidad())
+        print(info_cuenta)

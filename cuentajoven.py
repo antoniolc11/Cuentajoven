@@ -1,5 +1,4 @@
 from cuenta import Cuenta
-from persona import Persona
 class Cuentajoven(Cuenta):
     def __init__(self, persona, cantidad, bonificacion):
         if persona.es_joven_valido():
@@ -21,4 +20,6 @@ class Cuentajoven(Cuenta):
             raise ValueError('El titular no es valido')
 
     def mostrar(self):
-        return f'Cuenta Joven {self.bonificacion()}'
+        super().mostrar()
+        info = 'Bonificacion: ' + self.bonificacion()
+        print(info)
