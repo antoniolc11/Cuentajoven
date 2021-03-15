@@ -22,11 +22,5 @@ class Persona:
     def mostrar(self):
         return f'{self.nombre()} {self.edad()} {self.dni()}'
 
-    def es_mayor_edad(self):
-        return self.edad() >= 18
-
     def es_joven_valido(self):
-        if self.edad() < 25 and self.es_mayor_edad():
-            return True
-        else:
-            return False
+        return self.edad() >= 18 and self.edad() <= 25

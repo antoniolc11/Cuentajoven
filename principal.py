@@ -4,3 +4,7 @@ from persona import Persona
 
 manuel = Persona('Manuel Ortiz', 20, '95874525G')
 cuentajoven = Cuentajoven(manuel, 500, '10%')
+
+
+pablo = Persona('Pablo Fernandez', 26, '34751487K')
+cuenta = Cuenta(manuel, 500)
